@@ -1,5 +1,9 @@
 
+function balanceAmount(id, firstAmount, secondAmount) {
 
+    document.getElementById(id).innerText = parseFloat(firstAmount) - parseFloat(secondAmount)
+
+}
 
 document.getElementById('calc-btn').addEventListener('click', function () {
 
@@ -14,7 +18,8 @@ document.getElementById('calc-btn').addEventListener('click', function () {
 
     if (income > totalExpense) {
 
-        document.getElementById('balance').innerText = parseFloat(income) - parseFloat(totalExpense)
+        // document.getElementById('balance').innerText = parseFloat(income) - parseFloat(totalExpense)
+        balanceAmount('balance', income, totalExpense)
     }
     else {
 
@@ -31,7 +36,9 @@ document.getElementById('save-btn').addEventListener('click', function () {
 
     const balance = document.getElementById('balance').innerText
 
-    document.getElementById('remain-balance').innerText = parseFloat(balance) - parseFloat(savingAmount)
+    // document.getElementById('remain-balance').innerText = parseFloat(balance) - parseFloat(savingAmount)
+
+    balanceAmount('remain-balance', balance, savingAmount)
 
 
 
