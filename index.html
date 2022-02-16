@@ -21,23 +21,24 @@
 
         <section class=" border border-green-700 flex justify-center flex-col items-center bg-green-100 p-4 mb-3">
             <h3 class="text-3xl mb-5 font-bold ">Income </h3>
-            <p class="font-bold">Income : <input class=" font-bold px-2 py-1 bg-green-200 rounded border border-black"
-                    type="text"></p>
+            <p class="font-bold">Income : <input id="income"
+                    class=" font-bold px-2 py-1 bg-green-200 rounded border border-black" type="text"></p>
 
             <h3 class="text-3xl  font-bold my-5">Expenses </h3>
-            <p class="font-bold">Food : <input class=" font-bold px-2 py-1 bg-green-200 rounded border border-black"
-                    type="text">
-            </p>
-            <p class="font-bold my-5">Rent : <input
+            <p class="font-bold">Food : <input id="food"
                     class=" font-bold px-2 py-1 bg-green-200 rounded border border-black" type="text">
             </p>
-            <p class="font-bold">Cloth: <input class=" font-bold px-2 py-1 bg-green-200 rounded border border-black"
-                    type="text">
+            <p class="font-bold my-5">Rent : <input id="rent"
+                    class=" font-bold px-2 py-1 bg-green-200 rounded border border-black" type="text">
+            </p>
+            <p class="font-bold">Cloth: <input id="cloth"
+                    class=" font-bold px-2 py-1 bg-green-200 rounded border border-black" type="text">
             </p>
 
-            <button class=" btn px-7 py-2  bg-red-400 my-5 px-2 text-white rounded font-semibold">Calculate</button>
-            <p class="text-2xl  font-bold my-2">Total Expenses : <span></span></p>
-            <p class="text-2xl  font-bold">Balance : <span></span></p>
+            <button id="calc-btn"
+                class=" px-7 py-2  bg-red-400 my-5 px-2 text-white rounded font-semibold">Calculate</button>
+            <p class=" text-2xl  font-bold my-2">Total Expenses : <span id="total-expense"></span></p>
+            <p class="text-2xl  font-bold">Balance : <span id="balance"></span></p>
 
             <p class="font-bold">Save: <input class=" font-bold px-2 py-1 bg-green-200 rounded border border-black"
                     type="text"> <span class=" font-bold mx-3">%</span>
