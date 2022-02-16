@@ -1,71 +1,80 @@
 
 function balanceAmount(id, firstAmount, secondAmount) {
 
-    document.getElementById(id).innerText = parseFloat(firstAmount) - parseFloat(secondAmount)
-
+    const balance = document.getElementById(id).innerText = parseFloat(firstAmount) - parseFloat(secondAmount)
+    return balance
 }
+
 
 document.getElementById('calc-btn').addEventListener('click', function () {
 
+    document.getElementById('total-expense').innerText = expense()
+    document.getElementById('balance').innerText = balance()
 
-    const foodValue = parseFloat(document.getElementById('food').value)
-    const rentValue = parseFloat(document.getElementById('rent').value)
-    const clothValue = parseFloat(document.getElementById('cloth').value)
+})
 
-    // if (typeof foodValue != 'number' && typeof rentValue != 'number' && typeof clothValue != 'number') {
+function expense() {
 
-    //     document.getElementById('total-expense').innerText = 'please enter number!'
+    const foodValue = document.getElementById('food').value
+    const rentValue = document.getElementById('rent').value
+    const clothValue = document.getElementById('cloth').value
 
+    if (foodValue >= 0 && rentValue >= 0 && clothValue >= 0) {
 
-    // }
+        const totalExpense = document.getElementById('total-expense').innerText = parseFloat(foodValue) + parseFloat(rentValue) + parseFloat(clothValue)
 
-    // else {
+        return totalExpense;
 
-    const totalExpense = document.getElementById('total-expense').innerText = foodValue + rentValue + clothValue
+    }
 
-    // }
+    else {
 
+        const totalExpense = document.getElementById('total-expense').innerText = 'please enter valid input!'
+        return totalExpense;
+    }
+}
 
+function balance() {
 
     const income = document.getElementById('income').value
 
+    const totalExpense = expense()
+
     if (income > totalExpense) {
 
-        // document.getElementById('balance').innerText = parseFloat(income) - parseFloat(totalExpense)
-        balanceAmount('balance', income, totalExpense)
+        const balance = balanceAmount('balance', income, totalExpense)
+        return balance
     }
     else {
 
-        document.getElementById('balance').innerText = 'expense is higher!'
+        const balance = document.getElementById('balance').innerText = 'expense is higher!'
+        return balance
     }
-})
+}
 
 document.getElementById('save-btn').addEventListener('click', function () {
 
     const income = document.getElementById('income').value
     const savePercentage = document.getElementById('save-percentage').value
 
+    const balanceValue = balance()
+
     if (savePercentage >= 0) {
+
         const savingAmount = document.getElementById('saving-amount').innerText = parseFloat(income) * parseFloat(savePercentage) / 100
 
-    }
-    // else {
+        if (balanceValue >= savingAmount) {
 
-    // }
+            balanceAmount('remain-balance', balanceValue, savingAmount)
 
+        }
+        else {
 
+            document.getElementById('remain-balance').innerTex = 'Saving is higher than Balance!'
 
-    const balance = document.getElementById('balance').innerText
-
-    // document.getElementById('remain-balance').innerText = parseFloat(balance) - parseFloat(savingAmount)
-
-    if (balance > savingAmount) {
-        balanceAmount('remain-balance', balance, savingAmount)
-
+        }
     }
     else {
-
-        document.getElementById('remain-balance').innerTex = 'Saving is higher than Balance!'
-
+        savingAmount.innerText = 'error'
     }
 })
