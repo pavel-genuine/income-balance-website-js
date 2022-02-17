@@ -23,7 +23,7 @@ function expense() {
 
     else {
 
-        // Error message, if expese not positive number
+        // Error message, if expenses anything-other than positive number
         const totalExpense = document.getElementById('total-expense').innerText = '❌positive numbers only!'
         return totalExpense;
     }
@@ -51,7 +51,7 @@ function balance() {
     }
     else {
 
-        // Error message, if income's not positive number
+        // Error message, if income's anything-other than positive number
         const balance = document.getElementById('balance').innerText = '❌positive numbers only!'
         return balance
     }
