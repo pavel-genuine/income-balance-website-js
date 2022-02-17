@@ -23,7 +23,8 @@ function expense() {
 
     else {
 
-        const totalExpense = document.getElementById('total-expense').innerText = '❌ invalid input!'
+        // Error message, if expese not positive number
+        const totalExpense = document.getElementById('total-expense').innerText = '❌positive numbers only!'
         return totalExpense;
     }
 }
@@ -41,9 +42,16 @@ function balance() {
         const balance = balanceAmount('balance', income, totalExpense)
         return balance
     }
+
+    else if (income < 0) {
+
+        // Error message, if income's not positive number
+        const balance = document.getElementById('balance').innerText = '❌positive numbers only!'
+        return balance
+    }
     else {
 
-        const balance = document.getElementById('balance').innerText = '❌ imbalanced!'
+        const balance = document.getElementById('balance').innerText = "❌expense more than income"
         return balance
     }
 }
@@ -79,13 +87,16 @@ document.getElementById('save-btn').addEventListener('click', function () {
 
         } else {
 
-            document.getElementById('remain-balance').innerText = '❌ inappropriate'
+            // Error message, if saving is greater than balance
+            document.getElementById('remain-balance').innerText = '❌saving should be less than balance'
+
 
 
         }
 
     }
     else {
+        // Error message, if saving percentage is not poisitive number less than 100.
         document.getElementById('saving-amount').innerText = 'error❌!'
         document.getElementById('remain-balance').innerText = '❌ inappropriate'
     }
