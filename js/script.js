@@ -43,15 +43,16 @@ function balance() {
         return balance
     }
 
-    else if (income < 0) {
+    else if (totalExpense > income && totalExpense > 0) {
 
-        // Error message, if income's not positive number
-        const balance = document.getElementById('balance').innerText = '❌positive numbers only!'
+        // Error message, if expenses greater than income
+        const balance = document.getElementById('balance').innerText = "❌expense more than income"
         return balance
     }
     else {
 
-        const balance = document.getElementById('balance').innerText = "❌expense more than income"
+        // Error message, if income's not positive number
+        const balance = document.getElementById('balance').innerText = '❌positive numbers only!'
         return balance
     }
 }
