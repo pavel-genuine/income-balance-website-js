@@ -77,7 +77,7 @@ document.getElementById('save-btn').addEventListener('click', function () {
     // calling balance() function -2nd time
     const balanceValue = document.getElementById('balance').innerText = balance()
 
-    if (savePercentage >= 0 && savePercentage < 100) {
+    if (savePercentage >= 0 && savePercentage <= 100) {
 
         const savingAmount = document.getElementById('saving-amount').innerText = parseFloat(income) * parseFloat(savePercentage) / 100
 
@@ -97,7 +97,7 @@ document.getElementById('save-btn').addEventListener('click', function () {
 
     }
     else {
-        // Error message, if saving percentage is not poisitive number less than 100.
+        // Error message, if saving percentage is not poisitive number and more than 100.
         document.getElementById('saving-amount').innerText = 'error❌!'
         document.getElementById('remain-balance').innerText = '❌ inappropriate'
     }
